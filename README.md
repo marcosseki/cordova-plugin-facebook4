@@ -2,6 +2,11 @@
 
 > Use Facebook SDK version 4 in Cordova projects
 
+## Why user this repository?
+
+> When you need to use the same APP_ID with different apps, you should set "FacebookUrlSchemeSuffix" on iOS
+> If you don't set, the user can be redirected on callback to the wrong app
+
 ## Installation
 
 See npm package for versions - https://www.npmjs.com/package/cordova-plugin-facebook4
@@ -9,7 +14,7 @@ See npm package for versions - https://www.npmjs.com/package/cordova-plugin-face
 Make sure you've registered your Facebook app with Facebook and have an `APP_ID` [https://developers.facebook.com/apps](https://developers.facebook.com/apps).
 
 ```bash
-$ cordova plugin add cordova-plugin-facebook4 --save --variable APP_ID="123456789" --variable APP_NAME="myApplication"
+$ cordova plugin add https://github.com/marcosseki/cordova-plugin-facebook4 --save --variable APP_ID="123456789" --variable APP_NAME="myApplication" --variable APP_SUFFIX="appsuffix"
 ```
 
 If you need to change your `APP_ID` after installation, it's recommended that you remove and then re-add the plugin as above. Note that changes to the `APP_ID` value in your `config.xml` file will *not* be propagated to the individual platform builds.
@@ -131,21 +136,21 @@ Send Dialog:
 		description: "The site I told you about",
 		picture: "http://example.com/image.png"
 	}
-	
+
 Share dialog - Open Graph Story: (currently only fully available on Android, iOS currently does not support action_properties)
 
 	{
 		var obj = {};
-	
+
     	obj['og:type'] = 'objectname';
     	obj['og:title'] = 'Some title';
     	obj['og:url'] = 'https://en.wikipedia.org/wiki/Main_Page';
     	obj['og:description'] = 'Some description.';
 
     	var ap = {};
-    	
+
     	ap['expires_in'] = 3600;
-    	
+
     	var options = {
     		method: 'share_open_graph', // Required
         	action: 'actionname', // Required
@@ -153,8 +158,8 @@ Share dialog - Open Graph Story: (currently only fully available on Android, iOS
         	object: JSON.stringify(obj) // Required
     	};
 	}
-	
-In case you want to use custom actions/objects, just prepend the app namespace to the name (E.g: ` obj['og:type'] = 'appnamespace:objectname' `, `action: 'appnamespace:actionname'`. The namespace of a Facebook app is found on the Settings page. 
+
+In case you want to use custom actions/objects, just prepend the app namespace to the name (E.g: ` obj['og:type'] = 'appnamespace:objectname' `, `action: 'appnamespace:actionname'`. The namespace of a Facebook app is found on the Settings page.
 
 
 For options information see: [Facebook share dialog documentation](https://developers.facebook.com/docs/sharing/reference/share-dialog) [Facebook send dialog documentation](https://developers.facebook.com/docs/sharing/reference/send-dialog)
