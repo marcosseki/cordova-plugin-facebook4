@@ -12,13 +12,14 @@
       The Facebook plugin for Apache Cordova allows you to use the same JavaScript code in your
       Cordova application as you use in your web application.
     </description>
-        
-    <repo>https://github.com/jeduan/cordova-plugin-facebook4</repo>
+
+    <repo>https://github.com/marcosseki/cordova-plugin-facebook4</repo>
 
     <license>Apache 2.0</license>
 
     <preference name="APP_ID" />
     <preference name="APP_NAME" />
+    <preference name="APP_SUFFIX" />
 
     <engines>
         <!-- Requires > 3.5.0 because of the custom Framework tag for iOS [CB-6698] -->
@@ -102,7 +103,7 @@
             <dict>
               <key>CFBundleURLSchemes</key>
               <array>
-                <string>fb$APP_ID</string>
+                <string>fb$APP_ID$APP_SUFFIX</string>
               </array>
             </dict>
           </array>
