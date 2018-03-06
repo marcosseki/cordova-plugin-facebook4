@@ -2,7 +2,7 @@
 
 > Use Facebook SDK version 4 in Cordova projects
 
-## Why user this repository?
+## Why use this repository?
 
 > When you need to use the same APP_ID with different apps, you should set "FacebookUrlSchemeSuffix" on iOS
 > If you don't set, the user can be redirected on callback to the wrong app
