@@ -110,7 +110,6 @@
 
         <config-file target="*-Info.plist" parent="FacebookUrlSchemeSuffix">
           <string>$APP_SUFFIX</string>
-        </config-file>
           
         <config-file target="*-Info.plist" parent="FacebookHybridAppEvents">
             <string>$FACEBOOK_HYBRID_APP_EVENTS</string>
@@ -166,9 +165,16 @@
         </config-file>
 
         <!-- Facebook SDK -->
-        <framework src="FBSDKCoreKit" type="podspec" spec="5.15.0" />
-        <framework src="FBSDKLoginKit" type="podspec" spec="5.15.0" />
-        <framework src="FBSDKShareKit" type="podspec" spec="5.15.0" />
+        <podspec>
+            <config>
+                <source url="https://cdn.cocoapods.org/"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="FBSDKCoreKit" spec="5.15.0"/>
+                <pod name="FBSDKLoginKit" spec="5.15.0"/>
+                <pod name="FBSDKShareKit" spec="5.15.0"/>
+            </pods>
+        </podspec>
 
     </platform>
 
