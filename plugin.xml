@@ -110,6 +110,7 @@
 
         <config-file target="*-Info.plist" parent="FacebookUrlSchemeSuffix">
           <string>$APP_SUFFIX</string>
+        </config-file>
           
         <config-file target="*-Info.plist" parent="FacebookHybridAppEvents">
             <string>$FACEBOOK_HYBRID_APP_EVENTS</string>
